@@ -1,7 +1,7 @@
 import React from 'react';
 import IconMain from '../../images/icone-mergulhador.svg'
 
-const Icon = () => {
+const ColumnLeft = () => {
     return ( 
         <section className="bg-secondary hidden">
             <img src={IconMain} alt="" />
@@ -9,4 +9,4 @@ const Icon = () => {
      );
 }
  
-export default Icon;
+export default ColumnLeft;

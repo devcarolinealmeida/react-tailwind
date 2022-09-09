@@ -5,6 +5,7 @@ module.exports = {
     "./public/index.html",
     "./src/Components/Icon/index.jsx",
     "./src/App.js",
+    "./src/Components/Container"
 
   ],
   theme: {

@@ -1,10 +1,12 @@
 import './App.css';
-import Icon from "./Components/Icon/index.jsx"
+import ColumnLeft from './Components/ColumnLeft/index.jsx';
+import Container from './Components/Container/index.jsx'
 
 function App() {
   return (
     <main className="flex">
-      <Icon />
+      <ColumnLeft />
+      <Container />
     </main>
       
     
