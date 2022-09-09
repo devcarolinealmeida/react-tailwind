@@ -1,10 +1,13 @@
 import './App.css';
+import Icon from "./Components/Icon/index.jsx"
 
 function App() {
   return (
-    <h1 className="text-3xl text-secondary font-bold text-center">
-      Hello world!
-    </h1>
+    <main className="flex">
+      <Icon />
+    </main>
+      
+    
   )
 }
 
