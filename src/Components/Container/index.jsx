@@ -4,11 +4,18 @@ import { BsFillBellFill } from 'react-icons/bs'
 
 const Container = () => {
     return ( 
-        <section>
-            <div className='bg-white'>
-                <BsFillBellFill size={30}/>
+        <section className='bg-white'>
+            <div>
+                <BsFillBellFill size={70}/>
+            </div>
+            <div>
                 <h1>Newsletter</h1>
                 <p>A newsletter of Development articles, news and cool projects</p>
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="email" placeholder='Enter your email' />
+                <button type="button">Subscribe!</button>
             </div>
         </section>
      );
