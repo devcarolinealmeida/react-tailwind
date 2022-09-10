@@ -3,9 +3,9 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html",
-    "./src/Components/Icon/index.jsx",
-    "./src/App.js",
-    "./src/Components/Container"
+    // "./src/Components/Icon/index.jsx",
+    // "./src/App.js",
+    // "./src/Components/Container"
 
   ],
   theme: {
@@ -16,8 +16,8 @@ module.exports = {
         hover: "#1057B0"
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-      }
+        roboto: ['Roboto', 'sans-serif'],
+      },
     },
     
   },
