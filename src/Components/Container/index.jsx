@@ -7,7 +7,7 @@ import { BsFillBellFill } from 'react-icons/bs'
 
 const Container = () => {
     return ( 
-        <section className='bg-white font-roboto p-10'>
+        <section className='bg-white font-roboto p-10 flex flex-col items-center'>
             <div>
                 <BsFillBellFill size={70}/>
             </div>
