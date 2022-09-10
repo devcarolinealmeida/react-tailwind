@@ -1,4 +1,6 @@
 import React from 'react';
+import Content from '../Content/index'
+
 import { BsFillBellFill } from 'react-icons/bs'
 
 
@@ -8,10 +10,7 @@ const Container = () => {
             <div>
                 <BsFillBellFill size={70}/>
             </div>
-            <div>
-                <h1>Newsletter</h1>
-                <p>A newsletter of Development articles, news and cool projects</p>
-            </div>
+            <Content />
             <div>
                 <label>Email:</label>
                 <input type="email" placeholder='Enter your email' />
