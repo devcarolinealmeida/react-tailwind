@@ -4,7 +4,7 @@ import Container from './Components/Container/index.jsx'
 
 function App() {
   return (
-    <main className="flex">
+    <main className="flex px-6">
       <ColumnLeft />
       <Container />
     </main>
