@@ -1,4 +1,3 @@
-import './App.css';
 import ColumnLeft from './Components/ColumnLeft/index.jsx';
 import Container from './Components/Container/index.jsx'
 

@@ -4,5 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-  
+body {
+    @apply bg-primary flex justify-center items-center h-screen;
+}
