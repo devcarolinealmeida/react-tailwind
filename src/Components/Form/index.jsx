@@ -21,11 +21,25 @@ function useFormik({
     }
 }
 
+function validate(values) {
+    const errors = {};
+
+    if(!values.userEmail.includes('@')){
+        errors.userEmail = 'Please, insert a valid email';
+    } if (values.userName.length <= 1) {
+        errors.userName = 'This field is required'
+    }
+    return errors;
+}
+
 const Form = () => {
+    const [errors, setErrors] = useState({});
+
+
     const formik = useFormik({
         initialValues: {
-                userName: 'nome',
-                userEmail: '123'
+                userName: '',
+                userEmail: ''
         }
     });
 
@@ -33,40 +47,47 @@ const Form = () => {
   return (
     <form onSubmit={(event) => {
         event.preventDefault()
+        setErrors(validate(formik.values))
         console.log(formik.values)
     }} 
         className="w-full">
-      <div className="mb-2">
-          <label
-            htmlFor="userName"
-            className="text-sm font-bold text-gray-700 mb-2"
-          >
-            Name:
-          </label>
-          <input
-            className="text-sm w-full mb-4 pl-2 py-2 rounded border shadow focus:outline-none hover:border-hover"
-            type="text"
-            placeholder="Enter your name"
-            name="userName"
-            id="userName"
-            value={formik.values.userName}
-            onChange={formik.handleChange}
-          />
-          <label
-            htmlFor="userEmail"
-            className="text-sm font-bold text-gray-700 mb-2"
-          >
-            Email:
-          </label>
-          <input
-            className="text-sm w-full mb-4 pl-2 py-2 rounded border shadow focus:outline-none hover:border-hover"
-            type="email"
-            placeholder="email@example.com"
-            name="userEmail"
-            id="userEmail"
-            value={formik.values.userEmail}
-            onChange={formik.handleChange}
-          />
+      <div className="mb-10">
+          <div className="mb-5">
+              <label
+                htmlFor="userName"
+                className="text-sm font-bold text-gray-700 mb-2"
+              >
+                Name:
+              </label>
+              <input
+                className="text-sm w-full pl-2 py-2 rounded border shadow focus:outline-none hover:border-hover block"
+                type="text"
+                placeholder="Enter your name"
+                name="userName"
+                id="userName"
+                value={formik.values.userName}
+                onChange={formik.handleChange}
+              />
+              {errors.userName && <span className="text-xs text-red-500 absolute mt-1">{errors.userName}</span>} 
+          </div>
+          <div className="mb-5">
+              <label
+                htmlFor="userEmail"
+                className="text-sm font-bold text-gray-700 mb-2"
+              >
+                Email:
+              </label>
+              <input
+                className="text-sm w-full pl-2 py-2 rounded border shadow focus:outline-none hover:border-hover block"
+                type="text"
+                placeholder="email@example.com"
+                name="userEmail"
+                id="userEmail"
+                value={formik.values.userEmail}
+                onChange={formik.handleChange}
+              />
+              {errors.userEmail && <span className="text-xs text-red-500 absolute mt-1">{errors.userEmail}</span>}
+          </div>
       </div>
       <Button />
     </form>
