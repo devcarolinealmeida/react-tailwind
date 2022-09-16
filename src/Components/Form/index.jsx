@@ -89,7 +89,7 @@ const Form = () => {
               {errors.userEmail && <span className="text-xs text-red-500 absolute mt-1">{errors.userEmail}</span>}
           </div>
       </div>
-      <Button />
+      <Button text={'Subscribe!'} />
     </form>
   );
 };
