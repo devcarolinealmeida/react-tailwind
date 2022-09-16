@@ -13,7 +13,7 @@ const Container = () => {
                 <EffectBell />
                 <Bell />
             </div>
-            <Content />
+            <Content title={'Dev Newsletter'} paragraph={'A newsletter of Development articles, news and cool projects'} />
             <Form />
         </section>
      );
