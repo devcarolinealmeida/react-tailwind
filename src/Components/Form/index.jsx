@@ -22,18 +22,21 @@ function useFormik({
 }
 
 function validate(values) {
-    const errors = {};
+    const messages = {};
 
     if(!values.userEmail.includes('@')){
-        errors.userEmail = 'Please, insert a valid email';
+        messages.userEmail = 'Please, insert a valid email';
     } if (values.userName.length <= 1) {
-        errors.userName = 'This field is required'
+        messages.userName = 'This field is required'
+    } if (values.userEmail.includes('@') &&  values.userName.length >= 1){
+        messages.userOk = `Thank you for subscribing, ${values.userName}!`
+
     }
-    return errors;
+    return messages;
 }
 
 const Form = () => {
-    const [errors, setErrors] = useState({});
+    const [messages, setmessages] = useState({});
 
 
     const formik = useFormik({
@@ -47,7 +50,7 @@ const Form = () => {
   return (
     <form onSubmit={(event) => {
         event.preventDefault()
-        setErrors(validate(formik.values))
+        setmessages(validate(formik.values))
         console.log(formik.values)
     }} 
         className="w-full">
@@ -68,7 +71,7 @@ const Form = () => {
                 value={formik.values.userName}
                 onChange={formik.handleChange}
               />
-              {errors.userName && <span className="text-xs text-red-500 absolute mt-1">{errors.userName}</span>} 
+              {messages.userName && <span className="text-xs text-red-500 absolute mt-1">{messages.userName}</span>} 
           </div>
           <div className="mb-5">
               <label
@@ -86,10 +89,11 @@ const Form = () => {
                 value={formik.values.userEmail}
                 onChange={formik.handleChange}
               />
-              {errors.userEmail && <span className="text-xs text-red-500 absolute mt-1">{errors.userEmail}</span>}
+              {messages.userEmail && <span className="text-xs text-red-500 absolute mt-1">{messages.userEmail}</span>}
           </div>
       </div>
       <Button text={'Subscribe!'} />
+      {messages.userOk && <span className="text-xs text-secondary mt-1 absolute block">{messages.userOk}</span>}
     </form>
   );
 };
