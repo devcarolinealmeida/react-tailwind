@@ -112,6 +112,7 @@ function validate(values) {
 ### 4. Styling based on parent state (group-{modifier})
 When you need to style an element based on the state of some parent element, mark the parent with the group class, and use group-* modifiers like group-hover to style the target element:
 
+
 https://user-images.githubusercontent.com/104517812/197333558-1309ebdb-9a75-4a10-81a4-d5bc346720a6.mov
 
 
